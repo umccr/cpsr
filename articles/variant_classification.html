@@ -7,12 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="cpsr">
 <title>Variant classification • CPSR</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Variant classification">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Variant classification">
 <meta property="og:description" content="cpsr">
+<meta property="og:image" content="https://sigven.github.io/cpsr/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -22,11 +29,11 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-info" data-bs-theme="light"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">CPSR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9006</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,26 +43,23 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item">
-  <a class="nav-link" href="../index.html">Intro</a>
-</li>
-<li class="nav-item">
   <a class="nav-link" href="../articles/installation.html">Installation</a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../articles/running.html">Running</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/input.html">Input files</a>
     <a class="dropdown-item" href="../articles/virtual_panels.html">Virtual gene panels</a>
-    <a class="dropdown-item" href="../articles/variant_classification.html">ACMG classification</a>
+    <a class="dropdown-item" href="../articles/variant_classification.html">Variant classification</a>
     <a class="dropdown-item" href="../articles/output.html">Output files</a>
     <a class="dropdown-item" href="../articles/annotation_resources.html">Annotation resources</a>
   </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../articles/CHANGELOG.html">CHANGELOG</a>
 </li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
@@ -64,7 +68,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Reference</a>
+  <a class="nav-link" href="../articles/CHANGELOG.html">CHANGELOG</a>
 </li>
 <li class="nav-item">
   <a class="external-link nav-link" href="https://github.com/sigven/cpsr/" aria-label="github">
@@ -83,8 +87,8 @@
 
 
 <div class="row">
-  <main id="main"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>Variant classification</h1>
+  <main id="main" class="col-md-9"><div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>Variant classification</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/sigven/cpsr/blob/HEAD/vignettes/variant_classification.Rmd" class="external-link"><code>vignettes/variant_classification.Rmd</code></a></small>
@@ -93,10 +97,11 @@
 
     
     
-<p>All coding, <b>non-ClinVar</b> variants in the set of genes subject
-to screening have been classified according to a <i>standard, five-level
-pathogenicity scheme</i> (coined <b>CPSR_CLASSIFICATION</b>). The scheme
-has the same five levels as those employed by ClinVar, i.e.</p>
+<p>All coding, <strong>non-ClinVar</strong> variants in the set of genes
+subject to screening have been classified according to a <em>standard,
+five-level pathogenicity scheme</em> (coined
+<strong>CPSR_CLASSIFICATION</strong>). The scheme has the same five
+levels as those employed by ClinVar, i.e.</p>
 <ul>
 <li>pathogenic (<strong>P</strong>)</li>
 <li>likely pathogenic (<strong>LP</strong>)</li>
@@ -105,111 +110,199 @@ has the same five levels as those employed by ClinVar, i.e.</p>
 <li>benign (<strong>B</strong>)</li>
 </ul>
 <p>The classification performed by CPSR is rule-based, implementing most
-of the ACMG criteria related to <i>variant effect</i> and <i>population
-frequency</i>, which have been outlined in <a href="https://www.invitae.com/en/variant-classification/" class="external-link">SherLoc</a>
+of the ACMG criteria related to <em>variant effect</em> and
+<em>population frequency</em>, which have been outlined in <a href="https://www.invitae.com/en/variant-classification/" class="external-link">SherLoc</a>
 (<a href="https://www.ncbi.nlm.nih.gov/pubmed/28492532" class="external-link">Nykamp et al.,
 Genetics in Medicine, 2017</a>), and also some in <a href="https://github.com/ding-lab/CharGer" class="external-link">CharGer</a>. Information on
 cancer predisposition genes (mode of inheritance, loss-of-funcion
 mechanism etc.) is largely harvested from <a href="https://www.ncbi.nlm.nih.gov/pubmed/27153395" class="external-link">Maxwell et al., Am J
 Hum Genet, 2016</a>.</p>
 <p>The refined ACMG/AMP criteria listed below form the basis for the
-tier assigned to the <b>CPSR_CLASSIFICATION</b> variable. Specifically,
-the <b>score</b> in parenthesis indicates how much each evidence item
-contributes to either of the two pathogenicity poles (positive values
-indicate pathogenic support, negative values indicate benign support).
-Evidence score along each pole (‘B’ and ‘P’) are aggregated, and if
-there is conflicting or little evidence it will be classified as a VUS.
-This classification scheme has been adopted by the one outlined in <a href="https://www.ncbi.nlm.nih.gov/pubmed/28492532" class="external-link">SherLoc</a>.</p>
-<ol style="list-style-type: decimal">
-<li>ACMG_BA1_AD (<strong>-5</strong>) - Very high MAF (&gt; 0.5% in
-gnomAD non-cancer pop subset) - min AN = 12,000 - Dominant mechanism of
-disease</li>
-<li>ACMG_BS1_1_AD (<strong>-3</strong>)- High MAF (&gt; 0.1% in gnomAD
-non-cancer pop subset) - min AN = 12,000 - Dominant mechanism of
-disease</li>
-<li>ACMG_BS1_2_AD (<strong>-1</strong>) Somewhat high MAF (&gt; 0.005%
-in gnomAD non-cancer pop subset) - Dominant mechanism of disease</li>
-<li>ACMG_BA1_AR (<strong>-5</strong>) - Very high MAF (&gt; 1% in gnomAD
-non-cancer pop subset) - min AN = 12,000 - Recessive mechanism of
-disease</li>
-<li>ACMG_BS1_1_AR (<strong>-3</strong>)- High MAF (&gt; 0.3% in gnomAD
-non-cancer pop subset) - min AN = 12,000 - Recessive mechanism of
-disease</li>
-<li>ACMG_BS1_2_AR (<strong>-1</strong>)- Somewhat high MAF (&gt; 0.005%
-in gnomAD non-cancer pop subset) - Recessive mechanism of disease</li>
-<li>ACMG_BP3 (<strong>-2.5</strong>) - Non-coding variant in the UTR or
-promoter region</li>
-<li>ACMG_BP7 (<strong>-2.5</strong>) - Silent and intronic changes
-outside of the consensus splice site</li>
-<li>ACMG_BP4 (<strong>-1</strong>)- Multiple lines (&gt;=5) of
-computational evidence support a benign effect on the gene or gene
-product (conservation, evolutionary, splicing impact, etc. - from
-dbNSFP</li>
-<li>ACMG_BMC1 (<strong>0</strong>)- Peptide change is at the same
-location of a known benign change (ClinVar)</li>
-<li>ACMG_BSC1 (<strong>-3</strong>)- Peptide change is reported as
-benign (ClinVar)</li>
-<li>ACMG_BP1 (<strong>-0.5</strong>)- Missense variant in a gene for
-which primarily truncating variants (&gt;90% of pathogenic variants) are
-known to cause disease (ClinVar)</li>
-<li>ACMG_PM2_1 (<strong>0.5</strong>)- Allele count within pathogenic
-range (MAF &lt;= 0.005% in the population-specific non-cancer gnomAD
-subset)</li>
-<li>ACMG_PM2_2 (<strong>1</strong>)- Alternate allele absent in the
-population-specific non-cancer gnomAD subset</li>
-<li>ACMG_PVS1_1 (<strong>5</strong>) - Null variant
-(frameshift/nonsense) - predicted as LoF by LOFTEE - within pathogenic
-range - LoF established for gene</li>
-<li>ACMG_PVS1_2 (<strong>2.5</strong>)- Null variant
-(frameshift/nonsense) - not predicted as LoF by LOFTEE - within
-pathogenic range - LoF established for gene</li>
-<li>ACMG_PVS1_3 (<strong>2</strong>) - Null variant
-(frameshift/nonsense) - predicted as LoF by LOFTEE - within pathogenic
-range - LoF not established for gene</li>
-<li>ACMG_PVS1_4 (<strong>0</strong>) - Null variant
-(frameshift/nonsense) - not predicted as LoF by LOFTEE – within
-pathogenic range - LoF not established for gene</li>
-<li>ACMG_PVS1_5 (<strong>2.5</strong>) - Start (initiator methionine)
-lost - within pathogenic range - Lof established for gene</li>
-<li>ACMG_PVS1_6 (<strong>2</strong>) - Start (initiator methionine) lost
-- within pathogenic range - LoF not established for gene</li>
-<li>ACMG_PVS1_7 (<strong>4</strong>) - Donor/acceptor variant -
-predicted as LoF by LOFTEE - within pathogenic range - not last intron -
-LoF established for gene</li>
-<li>ACMG_PVS1_8 (<strong>2.5</strong>) - Donor/acceptor variant - last
-intron - within pathogenic range - LoF established for gene</li>
-<li>ACMG_PVS1_9 (<strong>2</strong>)- Donor/acceptor variant - not last
-intron - within pathogenic range - LoF not established for gene</li>
-<li>ACMG_PVS1_10 (<strong>2</strong>) - Donor variant at located at the
-+3, +4 or +5 position of the intron - within the pathogenic range</li>
-<li>ACMG_PS1 (<strong>4</strong>) - Same amino acid change as a
-previously established pathogenic variant (ClinVar) regardless of
-nucleotide change</li>
-<li>ACMG_PP2 (<strong>0.5</strong>) - Missense variant in a gene that
-has a relatively low rate of benign missense variation (&lt;30%) and
-where missense variants are a common mechanism of disease (&gt;50% P/LP
-(ClinVar))</li>
-<li>ACMG_PM1 (<strong>2</strong>) - Missense variant in a somatic
-mutation hotspot as determined by cancerhotspots.org</li>
-<li>ACMG_PM4 (<strong>0</strong>) - Protein length changes due to
-inframe indels or nonstop variant in non-repetitive regions of genes
-that harbor variants with a dominant mode of inheritance.</li>
-<li>ACMG_PPC1 (<strong>0</strong>) - Protein length changes due to
-inframe indels or nonstop variant in non-repetitive regions of genes
-that harbor variants with a recessive mode of inheritance.</li>
-<li>ACMG_PM5 (<strong>1.5</strong>) - Novel missense change at an amino
-acid residue where a different missense change determined to be
-pathogenic has been seen before (ClinVar)</li>
-<li>ACMG_PP3 (<strong>0.5</strong>)- Multiple lines (&gt;=5) of
-computational evidence support a deleterious effect on the gene or gene
-product (conservation, evolutionary, splicing impact, etc. - from dbNSFP
-</li>
-</ol>
+tier assigned to the <strong>CPSR_CLASSIFICATION</strong> variable.
+Specifically, the <strong>score</strong> in parenthesis indicates how
+much each evidence item contributes to either of the two pathogenicity
+poles (positive values indicate pathogenic support, negative values
+indicate benign support). Evidence score along each pole (‘B’ and ‘P’)
+are aggregated, and if there is conflicting or little evidence it will
+be classified as a VUS. This classification scheme has been adopted by
+the one outlined in <a href="https://www.ncbi.nlm.nih.gov/pubmed/28492532" class="external-link">SherLoc</a>.</p>
+<table class="table">
+<colgroup>
+<col width="35%">
+<col width="65%">
+</colgroup>
+<thead><tr class="header">
+<th>Tag</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1. <code>ACMG_BA1_AD</code> (<strong>-5</strong>)</td>
+<td>Very high MAF (&gt; 0.5% in gnomAD non-cancer pop subset) - min AN =
+12,000 - Dominant mechanism of disease</td>
+</tr>
+<tr class="even">
+<td>2. <code>ACMG_BS1_1_AD</code> (<strong>-3</strong>)</td>
+<td>High MAF (&gt; 0.1% in gnomAD non-cancer pop subset) - min AN =
+12,000 - Dominant mechanism of disease</td>
+</tr>
+<tr class="odd">
+<td>3. <code>ACMG_BS1_2_AD</code> (<strong>-1</strong>)</td>
+<td>Somewhat high MAF (&gt; 0.005% in gnomAD non-cancer pop subset) -
+Dominant mechanism of disease</td>
+</tr>
+<tr class="even">
+<td>4. <code>ACMG_BA1_AR</code> (<strong>-5</strong>)</td>
+<td>Very high MAF (&gt; 1% in gnomAD non-cancer pop subset) - min AN =
+12,000 - Recessive mechanism of disease</td>
+</tr>
+<tr class="odd">
+<td>5. <code>ACMG_BS1_1_AR</code> (<strong>-3</strong>)</td>
+<td>High MAF (&gt; 0.3% in gnomAD non-cancer pop subset) - min AN =
+12,000 - Recessive mechanism of disease</td>
+</tr>
+<tr class="even">
+<td>6. <code>ACMG_BS1_2_AR</code> (<strong>-1</strong>)</td>
+<td>Somewhat high MAF (&gt; 0.005% in gnomAD non-cancer pop subset) -
+Recessive mechanism of disease</td>
+</tr>
+<tr class="odd">
+<td>7. <code>ACMG_BP3</code> (<strong>-2.5</strong>)</td>
+<td>Non-coding variant in the UTR or promoter region</td>
+</tr>
+<tr class="even">
+<td>8. <code>ACMG_BP7</code> (<strong>-2.5</strong>)</td>
+<td>Silent and intronic changes outside of the consensus splice
+site</td>
+</tr>
+<tr class="odd">
+<td>9. <code>ACMG_BP4</code> (<strong>-1</strong>)</td>
+<td>Multiple lines (&gt;=5) of computational evidence support a benign
+effect on the gene or gene product (conservation, evolutionary, splicing
+impact, etc. - from dbNSFP</td>
+</tr>
+<tr class="even">
+<td>10. <code>ACMG_BMC1</code> (<strong>0</strong>)</td>
+<td>Peptide change is at the same location of a known benign change
+(ClinVar)</td>
+</tr>
+<tr class="odd">
+<td>11. <code>ACMG_BSC1</code> (<strong>-3</strong>)</td>
+<td>Peptide change is reported as benign (ClinVar)</td>
+</tr>
+<tr class="even">
+<td>12. <code>ACMG_BP1</code> (<strong>-0.5</strong>)</td>
+<td>Missense variant in a gene for which primarily truncating variants
+(&gt;90% of pathogenic variants) are known to cause disease
+(ClinVar)</td>
+</tr>
+<tr class="odd">
+<td>13. <code>ACMG_PM2_1</code> (<strong>0.5</strong>)</td>
+<td>Allele count within pathogenic range (MAF &lt;= 0.005% in the
+population-specific non-cancer gnomAD subset)</td>
+</tr>
+<tr class="even">
+<td>14. <code>ACMG_PM2_2</code> (<strong>1</strong>)</td>
+<td>Alternate allele absent in the population-specific non-cancer gnomAD
+subset</td>
+</tr>
+<tr class="odd">
+<td>15. <code>ACMG_PVS1_1</code> (<strong>5</strong>)</td>
+<td>Null variant (frameshift/nonsense) - predicted as LoF by LOFTEE -
+within pathogenic range - LoF established for gene</td>
+</tr>
+<tr class="even">
+<td>16. <code>ACMG_PVS1_2</code> (<strong>2.5</strong>)</td>
+<td>Null variant (frameshift/nonsense) - not predicted as LoF by LOFTEE
+- within pathogenic range - LoF established for gene</td>
+</tr>
+<tr class="odd">
+<td>17. <code>ACMG_PVS1_3</code> (<strong>2</strong>)</td>
+<td>Null variant (frameshift/nonsense) - predicted as LoF by LOFTEE -
+within pathogenic range - LoF not established for gene</td>
+</tr>
+<tr class="even">
+<td>18. <code>ACMG_PVS1_4</code> (<strong>0</strong>)</td>
+<td>Null variant (frameshift/nonsense) - not predicted as LoF by LOFTEE
+– within pathogenic range - LoF not established for gene</td>
+</tr>
+<tr class="odd">
+<td>19. <code>ACMG_PVS1_5</code> (<strong>2.5</strong>)</td>
+<td>Start (initiator methionine) lost - within pathogenic range - Lof
+established for gene</td>
+</tr>
+<tr class="even">
+<td>20. <code>ACMG_PVS1_6</code> (<strong>2</strong>)</td>
+<td>Start (initiator methionine) lost - within pathogenic range - LoF
+not established for gene</td>
+</tr>
+<tr class="odd">
+<td>21. <code>ACMG_PVS1_7</code> (<strong>4</strong>)</td>
+<td>Donor/acceptor variant - predicted as LoF by LOFTEE - within
+pathogenic range - not last intron - LoF established for gene</td>
+</tr>
+<tr class="even">
+<td>22. <code>ACMG_PVS1_8</code> (<strong>2.5</strong>)</td>
+<td>Donor/acceptor variant - last intron - within pathogenic range - LoF
+established for gene</td>
+</tr>
+<tr class="odd">
+<td>23. <code>ACMG_PVS1_9</code> (<strong>2</strong>)</td>
+<td>Donor/acceptor variant - not last intron - within pathogenic range -
+LoF not established for gene</td>
+</tr>
+<tr class="even">
+<td>24. <code>ACMG_PVS1_10</code> (<strong>2</strong>)</td>
+<td>Donor variant at located at the +3, +4 or +5 position of the intron
+- within the pathogenic range</td>
+</tr>
+<tr class="odd">
+<td>25. <code>ACMG_PS1</code> (<strong>4</strong>)</td>
+<td>Same amino acid change as a previously established pathogenic
+variant (ClinVar) regardless of nucleotide change</td>
+</tr>
+<tr class="even">
+<td>26. <code>ACMG_PP2</code> (<strong>0.5</strong>)</td>
+<td>Missense variant in a gene that has a relatively low rate of benign
+missense variation (&lt;30%) and where missense variants are a common
+mechanism of disease (&gt;50% P/LP (ClinVar))</td>
+</tr>
+<tr class="odd">
+<td>27. <code>ACMG_PM1</code> (<strong>2</strong>)</td>
+<td>Missense variant in a somatic mutation hotspot as determined by
+cancerhotspots.org</td>
+</tr>
+<tr class="even">
+<td>28. <code>ACMG_PM4</code> (<strong>0</strong>)</td>
+<td>Protein length changes due to inframe indels or nonstop variant in
+non-repetitive regions of genes that harbor variants with a dominant
+mode of inheritance.</td>
+</tr>
+<tr class="odd">
+<td>29. <code>ACMG_PPC1</code> (<strong>0</strong>)</td>
+<td>Protein length changes due to inframe indels or nonstop variant in
+non-repetitive regions of genes that harbor variants with a recessive
+mode of inheritance.</td>
+</tr>
+<tr class="even">
+<td>30. <code>ACMG_PM5</code> (<strong>1.5</strong>)</td>
+<td>Novel missense change at an amino acid residue where a different
+missense change determined to be pathogenic has been seen before
+(ClinVar)</td>
+</tr>
+<tr class="odd">
+<td>31. <code>ACMG_PP3</code> (<strong>0.5</strong>)</td>
+<td>Multiple lines (&gt;=5) of computational evidence support a
+deleterious effect on the gene or gene product (conservation,
+evolutionary, splicing impact, etc. - from dbNSFP</td>
+</tr>
+</tbody>
+</table>
 <p>Currently, the <strong>CPSR_CLASSIFICATION</strong> is determined
 based on the following ranges of pathogenicity scores:</p>
 <p><br></p>
-<div class="figure">
-<img src="../img/cpsr_classification.png" alt=""><p class="caption">Classification Scores</p>
+<div class="float">
+<img src="../img/cpsr_classification.png" alt="Classification Scores"><div class="figcaption">Classification Scores</div>
 </div>
   </main>
 </div>
@@ -217,15 +310,11 @@ based on the following ranges of pathogenicity scores:</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p>
-<p>Developed by <a href="https://github.com/sigven" class="external-link">Sigve Nakken</a>,
-<a href="https://github.com/pdiakumis" class="external-link">Peter Diakumis</a>.</p>
+  <p>Developed by <a href="https://github.com/sigven" class="external-link">Sigve Nakken</a>, <a href="https://github.com/pdiakumis" class="external-link">Peter Diakumis</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
     </footer>
