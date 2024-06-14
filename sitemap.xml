@@ -55,6 +55,9 @@
     <loc>https://sigven.github.io/cpsr/reference/assign_pathogenicity_evidence.html</loc>
   </url>
   <url>
+    <loc>https://sigven.github.io/cpsr/reference/bs_icon2.html</loc>
+  </url>
+  <url>
     <loc>https://sigven.github.io/cpsr/reference/check_variant2cancer_phenotype.html</loc>
   </url>
   <url>
@@ -86,9 +89,6 @@
   </url>
   <url>
     <loc>https://sigven.github.io/cpsr/reference/load_germline_snv_indel.html</loc>
-  </url>
-  <url>
-    <loc>https://sigven.github.io/cpsr/reference/mkdir.html</loc>
   </url>
   <url>
     <loc>https://sigven.github.io/cpsr/reference/plot_summary_statistics.html</loc>

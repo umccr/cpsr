@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">CPSR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9006</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9012</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,9 +48,6 @@
 <li class="active nav-item">
   <a class="nav-link" href="../articles/running.html">Running</a>
 </li>
-<li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
@@ -61,6 +58,9 @@
     <a class="dropdown-item" href="../articles/annotation_resources.html">Annotation resources</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../articles/CHANGELOG.html">CHANGELOG</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -68,7 +68,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="nav-link" href="../articles/CHANGELOG.html">CHANGELOG</a>
+  <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
 <li class="nav-item">
   <a class="external-link nav-link" href="https://github.com/sigven/cpsr/" aria-label="github">
@@ -169,11 +169,11 @@ are already attributed with classifications in ClinVar (i.e. set
 overrule the classification reported by ClinVar, which takes precedence
 for variants with a record here.</p>
 <hr>
-<p>By default, CPSR do not report variants found in cancer
-predisposition genes that are not associated with diseases or syndromes
-that are cancer relevant. The user may choose to show all reported
-ClinVar variants in cancer predisposition genes through a dedicated
-option:</p>
+<p>By default, CPSR do not report variants in the input sample that are
+found in cancer predisposition genes, yet <em>not</em> associated with
+diseases or syndromes that are cancer relevant. The user may choose to
+show all reported ClinVar variants in cancer predisposition genes
+through a dedicated option:</p>
 <ul>
 <li><code>--clinvar_report_noncancer</code></li>
 </ul>
@@ -211,7 +211,9 @@ options:</p>
     Required arguments:
     --input_vcf INPUT_VCF
                     VCF input file with germline query variants (SNVs/InDels).
-    --refdata_dir REFDATA_DIR   Directory that contains the uncompressed PCGR/CPSR reference data bundle 
+    --vep_dir VEP_DIR     Directory of VEP cache, e.g.  $HOME/.vep
+  --refdata_dir REFDATA_DIR
+                        Directory that contains the PCGR/CPSR reference data, e.g. ~/pcgr-data-1.4.1.9003 
     --output_dir OUTPUT_DIR
                     Output directory
     --genome_assembly {grch37,grch38}
@@ -294,7 +296,7 @@ options:</p>
     --vep_buffer_size VEP_BUFFER_SIZE
                     Variant buffer size (variants read into memory simultaneously, option '--buffer_size' in VEP)
                     - set lower to reduce memory usage, default: 500
-    --vep_gencode_basic   Consider only basic GENCODE transcripts with Variant Effect Predictor (VEP) (option '--gencode_basic' in VEP is used by default).
+    --vep_gencode_basic   Consider only basic GENCODE transcripts with Variant Effect Predictor (VEP) (option '--gencode_basic' in VEP).
     --vep_pick_order VEP_PICK_ORDER
                     Comma-separated string of ordered transcript properties for primary variant pick
                     ( option '--pick_order' in VEP), default: mane_select,mane_plus_clinical,canonical,appris,tsl,biotype,ccds,rank,length
@@ -308,37 +310,30 @@ options:</p>
     --force_overwrite     By default, the script will fail with an error if any output file already exists.
                     You can force the overwrite of existing result files by using this flag, default: False
     --version             show program's version number and exit
-    --no_reporting        Run functional variant annotation on VCF through VEP/vcfanno, omit tier assignment/report generation (STEP 4), default: False
+    --no_reporting        Run functional variant annotation on VCF through VEP/vcfanno, omit tier assignment/report generation, default: False
     --retained_info_tags RETAINED_INFO_TAGS
                     Comma-separated string of VCF INFO tags from query VCF that should be kept in CPSR output TSV
-    --docker_uid DOCKER_USER_ID
-                    Docker user ID. Default is the host system user ID. If you are experiencing permission errors,
-                    try setting this up to root (`--docker_uid root`), default: None
-    --no_docker           Run the CPSR workflow in a non-Docker mode, default: False
-
-    --report_theme {default,cerulean,journal,flatly,readable,spacelab,united,cosmo,lumen,paper,sandstone,simplex,yeti}
-                    Visual report theme (rmarkdown), default: default
-    --report_nonfloating_toc
-                    Do not float the table of contents (TOC) in output HTML report, default: False
-    --report_table_display {full,light}
-                    Set the level of detail/comprehensiveness in interactive datables of HTML report, very comprehensive (option 'full') or slim/focused ('light')
     --ignore_noncoding    Do not list non-coding variants in HTML report, default: False
-    --debug            Print full docker commands to log, default: False</code></pre>
+    --debug            Print full docker commands to log, default: False
+    --pcgrr_conda PCGRR_CONDA
+                        pcgrr conda env name (default: pcgrr)</code></pre>
 </div>
 <div class="section level2">
 <h2 id="example-run">Example run<a class="anchor" aria-label="anchor" href="#example-run"></a>
 </h2>
-<p>The <em>cpsr</em> software bundle contains an example VCF file.</p>
+<p>The <em>cpsr</em> R package comes with a test VCF file (GRCh37, not
+originating as germline calls from a real patient) that can be used to
+test the CPSR pipeline.</p>
 <p>Report generation with the example VCF, using the <a href="https://panelapp.genomicsengland.co.uk/panels/245/" class="external-link">Adult solid
 tumours cancer susceptibility</a> as the virtual gene panel, can be
 performed through the following command:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> <span class="er">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">conda</span> activate pcgr</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> <span class="er">(</span><span class="ex">pcgr</span><span class="kw">)</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">cpsr</span> <span class="dt">\</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>     <span class="at">--input_vcf</span> ~/cpsr-1.2/example.vcf.gz <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>     <span class="at">--input_vcf</span> ~/cpsr-2.0.0/inst/examples/example.vcf.gz <span class="dt">\</span></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>     <span class="at">--vep_dir</span> ~/.vep <span class="dt">\</span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>     <span class="at">--refdata_dir</span> ~/pcgr_ref_data <span class="dt">\</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>     <span class="at">--output_dir</span> ~/cpsr-1.2 <span class="dt">\</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>     <span class="at">--output_dir</span> ~/cpsr-2.0.0/ <span class="dt">\</span></span>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>     <span class="at">--genome_assembly</span> grch37 <span class="dt">\</span></span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>     <span class="at">--panel_id</span> 1 <span class="dt">\</span></span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>     <span class="at">--sample_id</span> example <span class="dt">\</span></span>
@@ -347,8 +342,8 @@ performed through the following command:</p>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>     <span class="at">--maf_upper_threshold</span> 0.2 <span class="dt">\</span></span>
 <span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>     <span class="at">--force_overwrite</span></span></code></pre></div>
 <p>Note that the example command also refers to the PCGR data bundle
-directory (<em>pcgr_db</em>), which contains the data bundle that are
-necessary for both <em>PCGR</em> and <em>CPSR</em>.</p>
+directory (<em>refdata_dir</em>), which contains the data bundle that
+are necessary for both <em>PCGR</em> and <em>CPSR</em>.</p>
 <p>This command will produce the following output files in the
 <em>output</em> folder:</p>
 <ol style="list-style-type: decimal">
@@ -360,25 +355,27 @@ file with relevant annotations appended by CPSR</li>
 VCF file with relevant annotations appended by CPSR (PASS variants
 only)</li>
 <li>
-<strong>example.cpsr.grch37.yaml</strong> - CPSR configuration file
-- output from pre-reporting (Python) workflow</li>
+<strong>example.cpsr.grch37.conf.yaml</strong> - CPSR configuration
+file - output from pre-reporting annotation (Python) workflow</li>
 <li>
 <strong>example.cpsr.grch37.pass.tsv.gz</strong> - Compressed TSV
 file (generated with <a href="https://github.com/sigven/vcf2tsvpy" class="external-link">vcf2tsvpy</a>) of VCF content
 with relevant annotations appended by CPSR</li>
 <li>
-<strong>example.cpsr.grch37.xlsx</strong> - A four-sheet Excel
-workbook that contains
+<strong>example.cpsr.grch37.xlsx</strong> - An Excel workbook that
+contains
 <ul>
 <li>
 <em>i)</em> information on virtual gene panel interrogated for
 variants</li>
 <li>
-<em>ii)</em> classification of variants found in input VCF</li>
+<em>ii)</em> classification of clinical significance for variants
+overlapping with cancer predisposition genes</li>
 <li>
-<em>iii)</em> match of variants with existing biomarkers</li>
+<em>iii)</em> match of variants with existing biomarkers (if any
+found)</li>
 <li>
-<em>iv)</em> secondary findings</li>
+<em>iv)</em> secondary findings (if any found)</li>
 </ul>
 </li>
 <li>
@@ -387,7 +384,7 @@ with clinically relevant variants in cancer predisposition genes</li>
 <li>
 <strong>example.cpsr.grch37.snvs_indels.classification.tsv.gz</strong>
 - TSV file with key annotations of SNVs/InDels classified according to
-clinical signififance</li>
+clinical significance</li>
 </ol>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

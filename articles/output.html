@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">CPSR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9006</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9012</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,9 +48,6 @@
 <li class="nav-item">
   <a class="nav-link" href="../articles/running.html">Running</a>
 </li>
-<li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
@@ -61,6 +58,9 @@
     <a class="dropdown-item" href="../articles/annotation_resources.html">Annotation resources</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../articles/CHANGELOG.html">CHANGELOG</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -68,7 +68,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="nav-link" href="../articles/CHANGELOG.html">CHANGELOG</a>
+  <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
 <li class="nav-item">
   <a class="external-link nav-link" href="https://github.com/sigven/cpsr/" aria-label="github">
@@ -576,16 +576,6 @@ near the splice donor site (<code>+3A/G</code>, <code>+4A</code> or
 <code>&lt;MOTIF_SCORE_CHANGE&gt;</code>,
 <code>&lt;TRANSCRIPTION_FACTORS&gt;</code>
 </td>
-</tr>
-<tr class="odd">
-<td><code>LoF</code></td>
-<td>Indicates Loss-of-function variant, as assessed by the LOFTEE VEP
-plugin (<a href="https://github.com/konradjk/loftee" class="external-link uri">https://github.com/konradjk/loftee</a>)</td>
-</tr>
-<tr class="even">
-<td><code>LoF_filter</code></td>
-<td>Filters underlying low confidence (LC) LoF calls, as assessed by the
-LOFTEE VEP plugin (<a href="https://github.com/konradjk/loftee" class="external-link uri">https://github.com/konradjk/loftee</a>)<code>| |</code>LoF_flags<code>| LOFTEE flags, see (https://github.com/konradjk/loftee) | |</code>LoF_info`</td>
 </tr>
 </tbody>
 </table>
@@ -1334,7 +1324,8 @@ file has the following naming convention:</p>
 <ul>
 <li><code>&lt;sample_id&gt;.cpsr.&lt;genome_assembly&gt;.xlsx</code></li>
 </ul>
-<p>The four sheets of the workbook contains the following:</p>
+<p>The Excel workbook is populated with the following sheets (pending
+that data is available):</p>
 <ul>
 <li>
 <em>VIRTUAL_PANEL</em> - details on the the chosen virtual gene
@@ -1561,15 +1552,20 @@ cancer-associated disease/phenotype (1) or not (0)</td>
 <tr class="even">
 <td>36. <code>LOSS_OF_FUNCTION</code>
 </td>
-<td>Loss-of-function variant, as predicted from VEP’s LofTee plugin</td>
+<td>Loss-of-function variant</td>
 </tr>
 <tr class="odd">
-<td>37. <code>NULL_VARIANT</code>
+<td>37. <code>LOF_FILTER</code>
+</td>
+<td>Loss-of-function filter</td>
+</tr>
+<tr class="even">
+<td>38. <code>NULL_VARIANT</code>
 </td>
 <td>Frameshift or stop-gain variant</td>
 </tr>
-<tr class="even">
-<td>38. <code>DBMTS</code>
+<tr class="odd">
+<td>39. <code>DBMTS</code>
 </td>
 <td>variant with potential effect on microRNA target sites (dbMTS).
 Format:
@@ -1581,21 +1577,21 @@ algorithms (separated by ‘&amp;’), <code>TS</code> = TargetScan,
 to disrupt a binding site (<code>L</code> = Loss), or create a new
 target site (<code>G</code> = gain) by the different algorithms</td>
 </tr>
-<tr class="odd">
-<td>39. <code>REGULATORY_ANNOTATION</code>
+<tr class="even">
+<td>40. <code>REGULATORY_ANNOTATION</code>
 </td>
 <td>Overlap of variant with regulatory elements (VEP)</td>
 </tr>
-<tr class="even">
-<td>40. <code>TF_BINDING_SITE_VARIANT</code>
+<tr class="odd">
+<td>41. <code>TF_BINDING_SITE_VARIANT</code>
 </td>
 <td>Indicates whether a variant overlaps a critical/non-critical
 position of a transcription factor binding site (TFBS) - as provided by
 VEP’s–regulatory option (‘Overlap: non-critical motif position’ or
 ‘Overlap: critical motif position’)</td>
 </tr>
-<tr class="odd">
-<td>41. <code>TF_BINDING_SITE_VARIANT_INFO</code>
+<tr class="even">
+<td>42. <code>TF_BINDING_SITE_VARIANT_INFO</code>
 </td>
 <td>Comma-separated list of transcription factor binding sites affected
 by variant. Format per factor:
@@ -1604,111 +1600,111 @@ by variant. Format per factor:
 critical motif position (<code>Y</code>), or non-critical motif position
 (<code>N</code>)</td>
 </tr>
-<tr class="even">
-<td>42. <code>GERP_SCORE</code>
+<tr class="odd">
+<td>43. <code>GERP_SCORE</code>
 </td>
 <td>Genomic conservation score (GERP)</td>
 </tr>
-<tr class="odd">
-<td>43. <code>DBSNP_RSID</code>
+<tr class="even">
+<td>44. <code>DBSNP_RSID</code>
 </td>
 <td>dbSNP identifier (rsid)</td>
 </tr>
-<tr class="even">
-<td>44. <code>CLINVAR_CLASSIFICATION</code>
+<tr class="odd">
+<td>45. <code>CLINVAR_CLASSIFICATION</code>
 </td>
 <td>clinical significance of ClinVar-recorded variant</td>
 </tr>
-<tr class="odd">
-<td>45. <code>CLINVAR_MSID</code>
+<tr class="even">
+<td>46. <code>CLINVAR_MSID</code>
 </td>
 <td>measureset identifier of ClinVar variant</td>
 </tr>
-<tr class="even">
-<td>46. <code>CLINVAR_VARIANT_ORIGIN</code>
+<tr class="odd">
+<td>47. <code>CLINVAR_VARIANT_ORIGIN</code>
 </td>
 <td>variant origin (somatic/germline) of ClinVar variant</td>
 </tr>
-<tr class="odd">
-<td>47. <code>CLINVAR_CONFLICTED</code>
+<tr class="even">
+<td>48. <code>CLINVAR_CONFLICTED</code>
 </td>
 <td>indicator of conflicting interpretations</td>
 </tr>
-<tr class="even">
-<td>48. <code>CLINVAR_PHENOTYPE</code>
+<tr class="odd">
+<td>49. <code>CLINVAR_PHENOTYPE</code>
 </td>
 <td>associated phenotype(s) for ClinVar variant</td>
 </tr>
-<tr class="odd">
-<td>49. <code>CLINVAR_REVIEW_STATUS_STARS</code>
+<tr class="even">
+<td>50. <code>CLINVAR_REVIEW_STATUS_STARS</code>
 </td>
 <td>Review confidence - number of gold stars</td>
 </tr>
-<tr class="even">
-<td>50. <code>N_INSILICO_CALLED</code>
+<tr class="odd">
+<td>51. <code>N_INSILICO_CALLED</code>
 </td>
 <td>Number of algorithms with effect prediction (damaging/tolerated)
 from dbNSFP</td>
 </tr>
-<tr class="odd">
-<td>51. <code>N_INSILICO_DAMAGING</code>
+<tr class="even">
+<td>52. <code>N_INSILICO_DAMAGING</code>
 </td>
 <td>Number of algorithms with damaging prediction from dbNSFP</td>
 </tr>
-<tr class="even">
-<td>52. <code>N_INSILICO_TOLERATED</code>
+<tr class="odd">
+<td>53. <code>N_INSILICO_TOLERATED</code>
 </td>
 <td>Number of algorithms with tolerated prediction from dbNSFP</td>
 </tr>
-<tr class="odd">
-<td>53. <code>N_INSILICO_SPLICING_NEUTRAL</code>
+<tr class="even">
+<td>54. <code>N_INSILICO_SPLICING_NEUTRAL</code>
 </td>
 <td>Number of algorithms with splicing neutral prediction from
 dbscSNV</td>
 </tr>
-<tr class="even">
-<td>54. <code>N_INSILICO_SPLICING_AFFECTED</code>
+<tr class="odd">
+<td>55. <code>N_INSILICO_SPLICING_AFFECTED</code>
 </td>
 <td>Number of algorithms with splicing affected prediction from
 dbscSNV</td>
 </tr>
-<tr class="odd">
-<td>55. <code>gnomADe_AF</code>
+<tr class="even">
+<td>56. <code>gnomADe_AF</code>
 </td>
 <td>Global MAF in gnomAD (exome samples)</td>
 </tr>
-<tr class="even">
-<td>56. <code>FINAL_CLASSIFICATION</code>
+<tr class="odd">
+<td>57. <code>FINAL_CLASSIFICATION</code>
 </td>
 <td>Final variant classification, using either
 <code>CLINVAR_CLASSIFICATION</code> if variant is ClinVar-classified, or
 <code>CPSR_CLASSIFICATION</code> for novel variants</td>
 </tr>
-<tr class="odd">
-<td>57. <code>CPSR_CLASSIFICATION</code>
+<tr class="even">
+<td>58. <code>CPSR_CLASSIFICATION</code>
 </td>
 <td>Variant clinical significance by CPSR’s classification algorithm
 (P/LP/VUS/LB/B)</td>
 </tr>
-<tr class="even">
-<td>58. <code>CPSR_PATHOGENICITY_SCORE</code>
+<tr class="odd">
+<td>59. <code>CPSR_PATHOGENICITY_SCORE</code>
 </td>
 <td>Aggregated pathogenicity score by CPSR’s algorithm</td>
 </tr>
-<tr class="odd">
-<td>59. <code>CPSR_CLASSIFICATION_CODE</code>
+<tr class="even">
+<td>60. <code>CPSR_CLASSIFICATION_CODE</code>
 </td>
 <td>Combination of CPSR classification codes assigned to the variant
 (ACMG)</td>
 </tr>
-<tr class="even">
-<td>60. <code>CPSR_CLASSIFICATION_DOC</code>
+<tr class="odd">
+<td>61. <code>CPSR_CLASSIFICATION_DOC</code>
 </td>
 <td>Descriptions of CPSR classification codes assigned to the variant
 (ACMG)</td>
 </tr>
-<tr class="odd">
-<td>61. <code>&lt;CUSTOM_POPULATION_GNOMAD</code>&gt;</td>
+<tr class="even">
+<td>62. <code>&lt;CUSTOM_POPULATION_GNOMAD</code>&gt;</td>
 <td>Population specific MAF in gnomAD control (non-cancer, population
 configured by user)</td>
 </tr>
