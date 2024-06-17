@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">CPSR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9012</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9014</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -167,6 +167,21 @@ only the <em>basic</em> set)</li>
 </li>
 </ul>
 </li>
+<li>LOFTEE plugin in VEP removed as loss-of-function variant classifier
+(due to low level of maintenance, and outdated dependency requirements).
+For now, a simplified LoF-annotation is used as a replacement, looking
+primarily at CSQ types (<code>stop_gained</code>,
+<code>frameshift_variant</code>, <code>splice_acceptor_variant</code>,
+<code>splice_donor_variant</code>). Furthermore, frameshift/stop-gain
+variants that are found within the last 5% of the coding sequence length
+are deemed non-LOF, as are splice donor variants not disrupting the
+canonical site (GC&gt;GT). An even more advanced LoF-annotation is
+planned for a future release.</li>
+<li>Biomarkers are matched much more comprehensively than in previous
+versions, matching at the genomic level, codon, exon, amino acid and
+gene level (both principal and non-principal transcript matches)</li>
+<li>Some bugs in the retrieval of secondary variant findings have been
+fixed</li>
 </ul>
 </div>
 <div class="section level5">
@@ -180,7 +195,8 @@ command is deprecated</li>
 <li><code>--gwas_p_value</code></li>
 <li>
 <code>--no_vcf_validate</code> - VCF validation is simplified, not
-relying on <em>vcf-validator</em> anymore</li>
+relying on the strict <em>vcf-validator</em>
+</li>
 </ul>
 </div>
 <div class="section level4">

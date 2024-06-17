@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">CPSR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9012</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9014</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -302,8 +302,16 @@ VEP’s <code>--flag_pick_allele</code> option)</td>
 </tr>
 <tr class="odd">
 <td><code>CDS_position</code></td>
-<td>Relative position of base pair in coding sequence (picked by VEP’s
-<code>--flag_pick_allele</code> option)</td>
+<td>Relative position of base pair in coding</td>
+</tr>
+<tr class="even">
+<td>sequence (picked by VEP’s <code>--flag_pick_allele</code>
+option)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>CDS_RELATIVE_POSITION</code></td>
+<td>Ratio of variant coding position to length of coding sequence</td>
 </tr>
 <tr class="even">
 <td><code>CDS_CHANGE</code></td>
@@ -474,68 +482,83 @@ VEP’s <code>--flag_pick_allele</code> option)</td>
 <code>--flag_pick_allele</code> option)</td>
 </tr>
 <tr class="even">
+<td><code>EXON_AFFECTED</code></td>
+<td>The exon affected by the variant (picked by VEP’s
+<code>--flag_pick_allele</code> option)</td>
+</tr>
+<tr class="odd">
 <td><code>LAST_EXON</code></td>
 <td>Logical indicator for last exon of transcript (picked by VEP’s
 <code>--flag_pick_allele</code> option)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>LAST_INTRON</code></td>
 <td>Logical indicator for last intron of transcript (picked by VEP’s
 <code>--flag_pick_allele</code> option)</td>
 </tr>
+<tr class="odd">
+<td><code>INTRON_POSITION</code></td>
+<td>Relative position of intron variant to nearest exon/intron junction
+(NearestExonJB VEP plugin)</td>
+</tr>
 <tr class="even">
+<td><code>EXON_POSITION</code></td>
+<td>Relative position of exon variant to nearest intron/exon junction
+(NearestExonJB VEP plugin)</td>
+</tr>
+<tr class="odd">
 <td><code>DISTANCE</code></td>
 <td>Shortest distance from variant to transcript (picked by VEP’s
 <code>--flag_pick_allele</code> option)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>BIOTYPE</code></td>
 <td>Biotype of transcript or regulatory feature (picked by VEP’s
 <code>--flag_pick_allele</code> option)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>TSL</code></td>
 <td>Transcript support level (picked by VEP’s
 <code>--flag_pick_allele</code> option)&gt;</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>PUBMED</code></td>
 <td>PubMed ID(s) of publications that cite existing variant - VEP</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>PHENO</code></td>
 <td>Indicates if existing variant is associated with a phenotype,
 disease or trait - VEP</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>GENE_PHENO</code></td>
 <td>Indicates if overlapped gene is associated with a phenotype, disease
 or trait - VEP</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>ALLELE_NUM</code></td>
 <td>Allele number from input; 0 is reference, 1 is first alternate etc -
 VEP</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>REFSEQ_MATCH</code></td>
 <td>The RefSeq transcript match status; contains a number of flags
 indicating whether this RefSeq transcript matches the underlying
 reference sequence and/or an Ensembl transcript (picked by VEP’s
 <code>--flag_pick_allele</code> option)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>PICK</code></td>
 <td>Indicates if this block of consequence data was picked by VEP’s
 <code>--flag_pick_allele</code> option</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>VEP_ALL_CSQ</code></td>
 <td>All VEP transcript block consequences
 (<code>Consequence:SYMBOL:Feature_type:Feature:BIOTYPE</code>) -
 VEP</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>EXONIC_STATUS</code></td>
 <td>Indicates if variant consequence type is ‘exonic’ or ‘nonexonic’. We
 define ‘exonic’ as any variants with the following consequences:
@@ -546,25 +569,33 @@ define ‘exonic’ as any variants with the following consequences:
 <code>synonymous_variant</code>, <code>protein_altering</code>
 </td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>CODING_STATUS</code></td>
 <td>Indicates if primary variant consequence type is ‘coding’ or
 ‘noncoding’. ‘coding’ variants are here defined as those with an
 ‘exonic’ status, with the exception of synonymous variants</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>NULL_VARIANT</code></td>
 <td>Primary variant consequence type is <code>frameshift</code> or
 <code>stop_gained</code>/<code>stop_lost</code>
 </td>
 </tr>
+<tr class="even">
+<td><code>LOSS_OF_FUNCTION</code></td>
+<td>Loss-of-function variant</td>
+</tr>
 <tr class="odd">
+<td><code>LOF_FILTER</code></td>
+<td>Loss-of-function filter</td>
+</tr>
+<tr class="even">
 <td><code>SPLICE_DONOR_RELEVANT</code></td>
 <td>Logical indicating if variant is located at a particular location
 near the splice donor site (<code>+3A/G</code>, <code>+4A</code> or
 <code>+5G</code>)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>REGULATORY_ANNOTATION</code></td>
 <td>Comma-separated list of all variant annotations of
 <code>Feature_type</code>, <code>RegulatoryFeature</code>, and
