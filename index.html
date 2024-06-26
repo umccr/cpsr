@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">CPSR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1.9014</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,9 +68,6 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="nav-link" href="reference/index.html">Reference</a>
-</li>
-<li class="nav-item">
   <a class="external-link nav-link" href="https://github.com/sigven/cpsr/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
@@ -92,7 +89,7 @@
 <p>The <em>Cancer Predisposition Sequencing Reporter (CPSR)</em> is a computational workflow that <strong>interprets germline variants</strong> identified from next-generation sequencing <strong>in the context of cancer predisposition</strong>.</p>
 <p><em>CPSR</em> accepts a query file with raw germline variant calls (SNVs/InDels) from a single sample (cancer patient), encoded in the <a href="https://samtools.github.io/hts-specs/VCFv4.2.pdf" class="external-link">VCF format</a>. CPSR conducts comprehensive gene and variant annotation on the input calls, and generates a dedicated <em>variant HTML report</em>, that provides the following main functionality:</p>
 <ol style="list-style-type: decimal">
-<li>Flexible <strong>selection of cancer predisposition genes</strong> subject to analysis</li>
+<li>Flexible <strong>selection of cancer predisposition genes</strong> subject to analysis and reporting</li>
 <li>
 <strong>Variant classification</strong> (<em>Pathogenic</em> to <em>Benign</em>) through implementation of ACMG guidelines</li>
 <li>
@@ -100,7 +97,7 @@
 <li>Reporting of <strong>secondary/incidental findings</strong> (ACMG recommendations)</li>
 </ol>
 <p>The workflow is integrated with the framework that underlies <a href="https://github.com/sigven/pcgr" class="external-link">Personal Cancer Genome Reporter - PCGR</a>. While <em>PCGR</em> is intended for reporting and analysis of somatic variants detected in a tumor, <em>CPSR</em> is intended for reporting and ranking of germline variants in protein-coding genes that are implicated in cancer predisposition and inherited cancer syndromes.</p>
-<p>Snapshots of sections in the cancer predisposition genome report:</p>
+<p>Snapshots of sections in the <a href="https://quarto.org" class="external-link">quarto</a>-based cancer predisposition genome report ((artificial sample, with more findings than usual):</p>
 <p><img src="img/cpsr_sc.png"></p>
 <p><br></p>
 <div class="section level3">
@@ -108,21 +105,14 @@
 </h3>
 <ul>
 <li>
-<em>May 2024</em>: <strong>2.x.x release</strong>
+<em>June 2024</em>: <strong>2.0.0 release</strong>
 <ul>
 <li>New HTML report generation and layout with <a href="https://quarto.org/" class="external-link">quarto</a>
 </li>
 <li>Excel output supported</li>
-<li>Updated virtual gene panels (Genomics England PanelApp, Cancer Gene Census)</li>
-<li>Reference data updates, most importantly including
-<ul>
-<li>ClinVar - May 2024</li>
-<li>CIViC - May 2024</li>
-<li>GENCODE - v45</li>
-</ul>
-</li>
-<li>Software updates - VEP 111</li>
-<li>Extensive code clean-up and re-structuring</li>
+<li>Data bundle update</li>
+<li>Singularity/Apptainer support</li>
+<li><a href="http://cpsr.readthedocs.io/en/latest/CHANGELOG.html" class="external-link">CHANGELOG</a></li>
 </ul>
 </li>
 <li>
